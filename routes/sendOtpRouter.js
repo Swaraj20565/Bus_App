@@ -21,7 +21,9 @@ router.post('/send-otp', async (req, res) => {
     if (user) {
       user.otp = otp;
       user.otp_expiry = otpExpiry;
+      console.log('OTP:', otp);
     } else {
+      console.log('OTP:', otp);
       user = new UserInfo({
         mobile_no: phone,
         otp,

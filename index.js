@@ -17,6 +17,7 @@ const authRoutes = require('./routes/auth');
 const verifyOtpRouter = require('./routes/verifyOtpRouter');
 
 const sendOtpRouter = require('./routes/sendOtpRouter');
+const Authlogin = require('./routes/login');
 const Authuser = require('./models/Authuser');
 const jwt = require('jsonwebtoken');
 
@@ -36,6 +37,7 @@ app.use('/api/buses', busRoutes);
 app.use('/api', adminBookingsRoute);
 app.use('/api', addBusRoute);
 app.use('/api', authRoutes);
+app.use('/api/',Authlogin);
 
 // Use sendOtp router
 app.use('/api', sendOtpRouter);
